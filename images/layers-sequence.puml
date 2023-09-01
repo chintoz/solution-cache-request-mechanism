@@ -1,0 +1,17 @@
+@startuml
+
+actor caller
+
+participant nginx as "Nginx"
+participant rest as "REST API"
+
+caller -> nginx : GET Request
+nginx -> rest: Do real call
+rest -> nginx: Response + headers
+nginx -> caller: Response from REST API
+
+caller -> nginx: GET Request
+nginx -> caller: Response from Cache
+
+
+@enduml

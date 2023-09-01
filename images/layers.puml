@@ -1,0 +1,11 @@
+@startuml
+
+actor caller
+
+component nginx as "Nginx"
+component rest as "REST API"
+
+caller -> nginx
+nginx -> rest
+
+@enduml
